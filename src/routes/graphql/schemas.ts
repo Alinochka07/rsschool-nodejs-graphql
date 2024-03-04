@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Type } from '@fastify/type-provider-typebox';
 
 export const gqlResponseSchema = Type.Partial(
@@ -17,4 +18,7 @@ export const createGqlResponseSchema = {
       additionalProperties: false,
     },
   ),
+  response: {
+    200: gqlResponseSchema,
+  },
 };
